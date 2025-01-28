@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - pgsql.yaml
   - pgweb.yaml
-  - configmap-postgres-init.yaml
