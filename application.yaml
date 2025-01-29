@@ -5,14 +5,18 @@ metadata:
   namespace: argocd
   spec:
     project: default
+
     source:
       repoURL: https://github.com/nicolasgomes1/kubernetes.git
       targetRevision: HEAD
       path: pg
+
     destination:
       server: 'https://kubernetes.default.svc'
-      namespace: my-argo-app
+      namespace: myapp
+
     SyncPolicy:
+      SyncOptions:
       - CreateNamespace=true
       - Automated:
           prune: true
