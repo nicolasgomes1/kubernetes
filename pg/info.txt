@@ -1,5 +1,8 @@
 use this minikube tunnel to use the localhost for pgweb
 
+
+minikube addons enable metrics-server
+
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl port-forward -n argocd svc argocd-server 8080:8080
