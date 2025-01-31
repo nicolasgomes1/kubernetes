@@ -3,21 +3,21 @@ kind: Application
 metadata:
   name: my-argo-app
   namespace: argocd
-  spec:
-    project: default
+spec:
+  project: default
 
-    source:
-      repoURL: https://github.com/nicolasgomes1/kubernetes.git
-      targetRevision: HEAD
-      path: pg
+  source:
+    repoURL: https://github.com/nicolasgomes1/kubernetes.git
+    targetRevision: HEAD
+    path: pg
 
-    destination:
-      server: 'https://kubernetes.default.svc'
-      namespace: myapp
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: myapp
 
-    SyncPolicy:
-      SyncOptions:
+  syncPolicy:
+    syncOptions:
       - CreateNamespace=true
-      - Automated:
-          prune: true
-          selfHeal: true
+    automated:
+      prune: true
+      selfHeal: true
